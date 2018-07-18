@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SGD | Login</title>
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg" @*style="background-image: url(../Images/fundo.jpg)"*@>
+
+    <div class="loginColumns animated fadeInDown">
+        <div class="row">
+            <div class="col-md-12">
+                @*<h1 class="font-bold" style="margin-top: -10px; color:white;"> Gestão de Documentos Digitais</h1>*@
+
+            </div>
+            @*<div class="col-md-2 center-orientation">
+
+                </div>*@
+            <div class="col-md-12 text-center ">
+
+                <img src="~/Images/empresa/logo_empresa.png" class="img-responsive" style=" margin-top: 80px;" />
+
+            </div>
+            @*<div class="col-md-2 center-orientation">
+
+                </div>*@
+            <div class="col-md-12 " style="margin-top:70px;">
+                <div class="ibox-content" style="background-color: rgba(255, 255, 255, 0.3);">
+                    <form class="m-t" role="form" action="index.html">
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Login" required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Senha" required="">
+                        </div>
+                        <button type="submit" class="btn btn-primary block full-width m-b"> <i class="fa fa-sign-in"></i> Entrar</button>
+
+
+                    </form>
+                    <p class="text-muted ">
+                        <small>SGD -  Gerenciador de Arquivos Digitais</small> <a href="http://sointech.com.br"><img alt="image" style="max-height: 20px; " src="~/Images/stech.png" /></a> &copy; <small>@DateTime.Today.Year.ToString()</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6 text-right" style="margin-top:-25px">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

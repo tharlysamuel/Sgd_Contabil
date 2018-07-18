@@ -1,0 +1,223 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout_2.cshtml";
+}
+
+<div class="wrapper wrapper-content animated fadeInDown">
+
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title" style=" border-color: #418005">
+                <h5 style="color: #418005"><i class="fa fa-suitcase"></i> Atuação em Segmentos (Propostas Emitidas)</h5>
+                <div class="ibox-tools">
+
+                    <select id="vai" class=" " tabindex="2">
+
+                        <option value="0"> Geral</option>
+                        <option value="0"> Últimos 30 Dias</option>
+                        <option value="0"> Últimos 15 Dias </option>
+                        <option value="0"> Últimos 5 Dias </option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="ibox-content" style="    min-height: 400px;">
+                <div>
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title" style=" border-color: #418005">
+                <h5 style="color: #418005"><i class="fa fa-money"></i> Atuação em Segmentos ( Representatividade do Faturamento Total %)</h5>
+                <div class="ibox-tools">
+
+                    <select class=" " tabindex="2">
+
+                        <option value="0"> Geral</option>
+                        <option value="0"> Últimos 30 Dias</option>
+                        <option value="0"> Últimos 15 Dias </option>
+                        <option value="0"> Últimos 5 Dias </option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="ibox-content" style="    min-height: 400px;">
+                <div>
+                    <canvas id="barChart" height="140"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title" style=" border-color: #418005">
+                <h5 style="color: #418005"><i class="fa fa-handshake-o"></i> Negociações</h5>
+                <div class="ibox-tools">
+                    <select id="randomizeData" class=" " tabindex="2">
+
+                        <option value="0"> Geral</option>
+                        <option value="0"> Últimos 30 Dias</option>
+                        <option value="0"> Últimos 15 Dias </option>
+                        <option value="0"> Últimos 5 Dias </option>
+
+                    </select>
+
+                </div>
+            </div>
+            <div class="ibox-content" style="    min-height: 400px;">
+                <div class="col-lg-12">
+                    <div class="col-lg-5" style="margin-top: 20px;">
+                    <div>
+                        <canvas id="doughnutChart" height="140"></canvas>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+           
+    </div>
+
+</div>
+    </div>
+@section Scripts {
+    @Scripts.Render("~/plugins/chartjs")
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            var randomScalingFactor = function () {
+                return Math.round(Math.random() * 100);
+            };
+
+
+            //////////////////////////////////////////////////////////////////////////////////////
+            // BARRAS
+
+            var barData = {
+                labels: ["Agroindustria", "Postos de Combustivel", "Hospitais,Clínicas etc", "Oficinas", "Industria", "Outros"],
+                datasets: [
+                    {
+                        label: "Faturamento (%)",
+                        backgroundColor: "rgba(65,128,5,0.5)",
+                        borderColor: "rgba(65,128,5,1)",
+                        pointBackgroundColor: "rgba(65,128,5,1)",
+                        pointBorderColor: "#fff",
+                        data: [1, 10, 50, 5, 10, 5]
+                    }
+                ]
+            };
+
+            var barOptions = {
+                responsive: true
+            };
+
+
+            var ctx2 = document.getElementById("barChart").getContext("2d");
+            new Chart(ctx2, { type: 'bar', data: barData, options: barOptions });
+
+            ///////////////////////////////////////////////////////////////////////////////////////
+            //BOLACHA
+            //http://www.chartjs.org/samples/latest/
+            var config = {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+
+                        ],
+                        backgroundColor: [
+                           '#418005', '#f5b300', '#dedede'
+                        ],
+                        borderColor: [
+                         '#418005', '#f5b300', '#dedede'
+                        ],
+                        label: 'Dataset 1'
+                    }],
+                    labels: [
+                      'Negociações Ganhas', 'Perdidas', 'Em Andamento'
+                    ]
+                },
+                options: {
+                    responsive: true
+
+                }
+            };
+
+
+            var ctx4 = document.getElementById("doughnutChart").getContext("2d");
+            window.bolacha = new Chart(ctx4, config);
+            //window.bolacha = new Chart(ctx4, { type: 'doughnut', options: doughnutOptions });
+
+            document.getElementById('randomizeData').addEventListener('change', function () {
+                config.data.datasets.forEach(function (dataset) {
+                    dataset.data = dataset.data.map(function () {
+                        return randomScalingFactor();
+                    });
+                });
+
+                window.bolacha.update();
+            });
+
+            /////////////////////////////////////////////////////////////////////////////////////////
+            // RADAR
+            //http://www.chartjs.org/samples/latest/
+            var config2 = {
+                type: 'radar',
+                data: {
+                    datasets: [{
+                        data: [
+                            7,
+                            5,
+                            8,
+                            10,
+                            6,
+                            9
+                        ],
+                        backgroundColor: [
+                           'rgba(65,128,5,0.2)'
+                        ],
+                        borderColor: [
+                         'rgba(65,128,5,1)'
+                        ],
+                        label: 'Segmentos de Atuação'
+                    }],
+                    labels: [
+                     'Outros', 'Agroindustria', 'Postos de Combustivel', 'Hospitais,Clínicas etc', 'Oficinas', 'Industria'
+                    ]
+                },
+                options: {
+                    responsive: true
+
+                }
+            };
+
+
+            var ctx5 = document.getElementById("radarChart").getContext("2d");
+            window.radar1 = new Chart(ctx5, config2);
+
+
+        });
+
+
+
+
+
+
+    </script>
+}
+
+
+
+

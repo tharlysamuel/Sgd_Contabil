@@ -1,0 +1,45 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="" style="height:35px" src="~/Images/d.png" />
+                    </span>
+                    <br/><br/>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Usuário</strong>
+                            </span> <span class="text-muted text-xs block">Empresa X <b class="caret"></b></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                       
+                        <li><a href="@Url.Action("Login", "Pages")">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    SGD
+                </div>
+            </li>
+            <li class="@Html.IsSelected(controller: "Cliente")">
+                <a href="@Url.Action("Index", "Cliente")"><i class="fa fa-user-circle"></i> <span class="nav-label" data-i18n="nav.layouts">Documentos (Clientes)</span> </a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Usuario")">
+                <a href="@Url.Action("Index", "Usuario")"><i class="fa fa-users"></i> <span class="nav-label" data-i18n="nav.layouts">Documentos (Controle)</span> </a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Processar")">
+                <a href="@Url.Action("Index", "Processar")"><i class="fa fa-file-archive-o"></i> <span class="nav-label" data-i18n="nav.layouts">Processar Documentos</span> </a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Metrics")">
+                <a href="@Url.Action("Index", "Metrics")"><i class="fa fa-dashboard"></i> <span class="nav-label" data-i18n="nav.layouts"> Painel do Usuarios</span> </a>
+            </li>
+
+        
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,733 @@
+﻿@{
+    ViewBag.Title = "Documentos Controle";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>Documentos Eletrônicos</h2>
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal5" style=" margin-top: -38px;">
+            <i class="fa fa-paper-plane"></i> Enviar Documentos Para o Cliente
+        </button>
+    </div>
+
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+
+    <div class="tabs-container">
+        <ul class="nav nav-tabs">
+            <li class=""><a data-toggle="tab" href="#tab-1"><i class="fa fa-paper-plane"></i> Documentos Enviados </a></li>
+            <li class="active"><a data-toggle="tab" href="#tab-2"><i class="fa fa-inbox"></i> Documentos Recebidos &emsp;<span class="label label-warning pull-right">100 / 230</span></a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane ">
+                <div class="panel-body">
+                    <div class="col-lg-3">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-content">
+                                <div class="file-manager">
+                                    <h5>ANO</h5>
+                                    <select id="" data-placeholder=" " class="chosen-select form-control" tabindex="2">
+                                        <option value="0" selected> 2018 </option>
+                                        <option value="1"> 2017 </option>
+                                        <option value="2"> 2016</option>
+                                    </select>
+                                    <h5>MÊS</h5>
+                                    <select id="" data-placeholder=" " class="chosen-select form-control" tabindex="2">
+                                        <option value="0"> JANEIRO </option>
+                                        <option value="1"> FEVEREIRO </option>
+                                        <option value="2"> MARÇO</option>
+                                        <option value="3"> ABRIL</option>
+                                        <option value="4"> MAIO</option>
+                                        <option value="5" selected> JUNHO</option>
+                                        <option value="6"> JULHO</option>
+                                        <option value="7"> AGOSTO</option>
+                                        <option value="8"> SETEMBRO</option>
+                                        <option value="9"> OUTUBRO</option>
+                                        <option value="10"> NOVEMBRO</option>
+                                        <option value="11"> DEZEMBRO</option>
+                                    </select>
+                                    <h5>DIA</h5>
+                                    <select id="" data-placeholder=" " class="chosen-select form-control" tabindex="2">
+                                        <option value="0" selected> HOJE -  @DateTime.Today.Day.ToString()</option>
+                                        <option value="1"> 1 </option>
+                                        <option value="1"> 2 </option>
+                                        <option value="2"> 3</option>
+                                        <option value="3"> 4</option>
+                                        <option value="4"> 5</option>
+                                        <option value="5">6</option>
+                                        <option value="6"> 7</option>
+                                        <option value="7"> 8</option>
+                                        <option value="8"> 9</option>
+                                        <option value="9"> 10</option>
+                                        <option value="10"> 11</option>
+                                        <option value="11"> 12</option>
+                                        <option value="11"> 13</option>
+                                        <option value="11"> 14</option>
+                                        <option value="11"> 15</option>
+                                        <option value="11"> 16</option>
+                                        <option value="11"> 17</option>
+                                        <option value="11"> 18</option>
+                                        <option value="11"> 19</option>
+                                        <option value="11"> 20</option>
+                                        <option value="11"> 21</option>
+                                        <option value="11"> 22</option>
+                                        <option value="11"> 23</option>
+                                        <option value="11"> 24</option>
+                                        <option value="11"> 25</option>
+                                        <option value="11"> 26</option>
+                                        <option value="11"> 27</option>
+                                        <option value="11"> 28</option>
+                                        <option value="11"> 29</option>
+                                        <option value="11"> 30</option>
+                                        <option value="11"> 31</option>
+                                    </select>
+
+
+                                    <div class="hr-line-dashed"></div>
+                                    <h5>Tipos de Documentos</h5>
+                                    <ul class="folder-list" style="padding: 0">
+                                        <li><a href=""><i class="fa fa-folder"></i> Notas Fiscais de Entrada<span class="label label-default pull-right">24</span></a> </li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Notas Fiscais de Saída<span class="label label-default pull-right">24</span></a> </li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Comprovantes <span class="label label-default pull-right">14</span></a> </li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Contratos <span class="label label-default pull-right">5</span></a></li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Modelos <span class="label label-default pull-right">3</span></a></li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Guias <span class="label label-default pull-right">7</span></a></li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Holerites <span class="label label-default pull-right">5</span></a></li>
+                                    </ul>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 animated fadeInRight">
+
+                        <div class="container-fluid">
+                            <div class=" animated fadeInRight">
+
+                                <small>6 Registros Encontrados...</small>
+
+                                <table class="table table-hover table-striped issue-tracker">
+
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Nome do Documento</th>
+                                            <th>Adicionado em</th>
+                                            <th>Data do Documento</th>
+                                            <th>Enviado Para</th>
+
+                                            <th class="col-lg-1"><i class="fa fa-ellipsis-h"></i> </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <i class="fa fa-file-o"></i>
+                                            </td>
+                                            <td class="issue-info">
+
+                                                <a href="http://localhost:58893/Processar" target="_blank" title="Editar Documento" onclick="">
+                                                    NFE 234
+                                                    <small style="font-weight:lighter;font-size:8px">
+                                                        Nota Fiscal
+                                                    </small>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                06/06/2018
+                                            </td>
+                                            <td>06/06/2018</td>
+                                            <td>Cliente </td>
+                                            <td class="col-lg-2">
+                                                <a style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle" style="font-size:10px ;margin-top:2px;">Opções<span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="btn btn-xs btn-link" title="" id="">Visualizar </a></li>
+                                                        <li><a href="#" class="btn  btn-xs btn-link"> <i class="fa fa-edit "> Editar</i></a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a href="#" class="btn btn-xs btn-link" onclick=""><i class="fa fa-trash "> Excluir</i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i class="fa fa-file-o"></i>
+                                            </td>
+                                            <td class="issue-info">
+
+                                                <a href="http://localhost:58893/Processar" title="Editar Documento" onclick="">
+                                                    Contrato de prestação de serviços
+                                                    <small style="font-weight:lighter;font-size:8px">
+                                                        Contratos
+                                                    </small>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                06/06/2018
+                                            </td>
+                                            <td>06/06/2018</td>
+                                            <td>Cliente </td>
+                                            <td class="col-lg-2">
+                                                <a style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle" style="font-size:10px ;margin-top:2px;">Opções<span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="btn btn-xs btn-link" title="" id="">Visualizar </a></li>
+                                                        <li><a href="#" class="btn  btn-xs btn-link"> <i class="fa fa-edit "> Editar</i></a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a href="#" class="btn btn-xs btn-link" onclick=""><i class="fa fa-trash "> Excluir</i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i class="fa fa-file-o"></i>
+                                            </td>
+                                            <td class="issue-info">
+
+                                                <a href="http://localhost:58893/Processar" title="Editar Documento" onclick="">
+                                                    NFE 257
+                                                    <small style="font-weight:lighter;font-size:8px">
+                                                        Nota Fiscal de Saída
+                                                    </small>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                06/06/2018
+                                            </td>
+                                            <td>06/06/2018</td>
+                                            <td>Cliente </td>
+                                            <td class="col-lg-2">
+                                                <a href="http://localhost:58893/Processar" style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle" style="font-size:10px ;margin-top:2px;">Opções<span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="btn btn-xs btn-link" title="" id="">Visualizar </a></li>
+                                                        <li><a href="#" class="btn  btn-xs btn-link"> <i class="fa fa-edit "> Editar</i></a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a href="#" class="btn btn-xs btn-link" onclick=""><i class="fa fa-trash "> Excluir</i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i class="fa fa-file-o"></i>
+                                            </td>
+                                            <td class="issue-info">
+
+                                                <a href="http://localhost:58893/Processar" title="Editar Documento" onclick="">
+                                                    NFS 887
+                                                    <small style="font-weight:lighter;font-size:8px">
+                                                        Nota Fiscal de Saída
+                                                    </small>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                06/06/2018
+                                            </td>
+                                            <td>06/06/2018</td>
+                                            <td>Cliente </td>
+                                            <td class="col-lg-2">
+                                                <a style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle" style="font-size:10px ;margin-top:2px;">Opções<span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="btn btn-xs btn-link" title="" id="">Visualizar </a></li>
+                                                        <li><a href="#" class="btn  btn-xs btn-link"> <i class="fa fa-edit "> Editar</i></a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a href="#" class="btn btn-xs btn-link" onclick=""><i class="fa fa-trash "> Excluir</i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i class="fa fa-file-o"></i>
+                                            </td>
+                                            <td class="issue-info">
+
+                                                <a href="http://localhost:58893/Processar" title="Editar Documento" onclick="">
+                                                    Holerite João
+                                                    <small style="font-weight:lighter;font-size:8px">
+                                                        Holerites
+                                                    </small>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                06/06/2018
+                                            </td>
+                                            <td>06/06/2018</td>
+                                            <td>Cliente </td>
+                                            <td class="col-lg-2">
+                                                <a style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle" style="font-size:10px ;margin-top:2px;">Opções<span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="btn btn-xs btn-link" title="" id="">Visualizar </a></li>
+                                                        <li><a href="#" class="btn  btn-xs btn-link"> <i class="fa fa-edit "> Editar</i></a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a href="#" class="btn btn-xs btn-link" onclick=""><i class="fa fa-trash "> Excluir</i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <br><br>
+                    </div>
+
+
+                </div>
+            </div>
+            <div id="tab-2" class="tab-pane active" >
+                <div class="panel-body">
+                    <div class="col-lg-3">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-content">
+                                <div class="file-manager">
+                                    <h5>ANO</h5>
+                                    <select id="" data-placeholder=" " class="chosen-select form-control" tabindex="2">
+                                        <option value="0" selected> 2018 </option>
+                                        <option value="1"> 2017 </option>
+                                        <option value="2"> 2016</option>
+                                    </select>
+                                    <h5>MÊS</h5>
+                                    <select id="" data-placeholder=" " class="chosen-select form-control" tabindex="2">
+                                        <option value="0"> JANEIRO </option>
+                                        <option value="1"> FEVEREIRO </option>
+                                        <option value="2"> MARÇO</option>
+                                        <option value="3"> ABRIL</option>
+                                        <option value="4"> MAIO</option>
+                                        <option value="5" selected> JUNHO</option>
+                                        <option value="6"> JULHO</option>
+                                        <option value="7"> AGOSTO</option>
+                                        <option value="8"> SETEMBRO</option>
+                                        <option value="9"> OUTUBRO</option>
+                                        <option value="10"> NOVEMBRO</option>
+                                        <option value="11"> DEZEMBRO</option>
+                                    </select>
+                                    <h5>DIA</h5>
+                                    <select id="" data-placeholder=" " class="chosen-select form-control" tabindex="2">
+                                        <option value="0" selected style=""> HOJE -  @DateTime.Today.Day.ToString() - Em Processamento</option>
+                                        <option value="1 " style="background-color:yellow"> 1 - Processamento pendente</option>
+                                        <option value="1"  style="background-color:yellow"> 2 - Processamento pendente</option>
+                                        <option value="2"  style="background-color:yellow"> 3 - Processamento pendente</option>
+                                        <option value="3"  style="background-color:lightblue"> 4 - Em Processamento </option>
+                                        <option value="4"  style="background-color: lightblue"> 5 - Em Processamento </option>
+                                        <option value="5"  style="background-color: lightblue"> 6 - Em Processamento </option>
+                                        <option value="6"  style="background-color:lightgreen"> 7  - Processamento Finalizado</option>
+                                        <option value="7"  style="background-color:lightgreen"> 8  - Processamento Finalizado</option>
+                                        <option value="8"  style="background-color:lightgreen"> 9  - Processamento Finalizado</option>
+                                        <option value="9"  style="background-color:lightgreen"> 10 - Processamento Finalizado</option>
+                                        <option value="10" style="background-color:lightgreen"> 11 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 12 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 13 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 14 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 15 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 16 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 17 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 18 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 19 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 20 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 21 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 22 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 23 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 24 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 25 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 26 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 27 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 28 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 29 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 30 - Processamento Finalizado</option>
+                                        <option value="11" style="background-color:lightgreen"> 31 - Processamento Finalizado</option>
+                                    </select>
+
+
+                                    <div class="hr-line-dashed"></div>
+                                    <h5>Tipos de Documentos</h5>
+                                    <ul class="folder-list" style="padding: 0">
+                                        <li><a href=""><i class="fa fa-folder"></i> Notas Fiscais de entrada <span class="label label-warning pull-right">24 / 100</span></a> </li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Notas Fiscais de entrada <span class="label label-warning pull-right">45 / 100</span></a> </li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Comprovantes <span class="label label-primary pull-right">14 / 14</span></a> </li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Contratos <span class="label label-default pull-right">5</span></a></li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Modelos <span class="label label-defaul pull-right" >3</span></a></li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Guias <span class="label label-default pull-right">7</span></a></li>
+                                        <li><a href=""><i class="fa fa-folder"></i> Holerites <span class="label label-warning pull-right">5 / 25</span></a></li>
+                                    </ul>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 animated fadeInRight">
+
+                        <div class="container-fluid">
+                            <div class=" animated fadeInRight">
+
+                                <small>6 Registros Encontrados...</small>
+
+                                <table class="table table-hover table-striped issue-tracker">
+
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Nome do Documento</th>
+                                            <th>Adicionado em</th>
+                                            <th>Data do Documento</th>
+                                            <th>Status</th>
+                                            <th class="col-lg-1"><i class="fa fa-ellipsis-h"></i> </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <i class="fa fa-file-o"></i>
+                                            </td>
+                                            <td class="issue-info">
+
+                                                <a href="http://localhost:58893/Processar" title="Editar Documento" onclick="">
+                                                    NFE 234
+                                                    <small style="font-weight:lighter;font-size:8px">
+                                                        Nota Fiscal
+                                                    </small>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                06/06/2018
+                                            </td>
+                                            <td>06/06/2018</td>
+                                            <td><span class="label label-defaul pull-right">Em processamento (João)</span></td>
+                                            <td class="col-lg-2">
+                                                <a style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+                                            </td>
+                                        </tr>
+                                 
+                                        <tr>
+                                            <td>
+                                                <i class="fa fa-file-o"></i>
+                                            </td>
+                                            <td class="issue-info">
+
+                                                <a href="http://localhost:58893/Processar" title="Editar Documento" onclick="">
+                                                    NFE 257
+                                                    <small style="font-weight:lighter;font-size:8px">
+                                                        Nota Fiscal de Saída
+                                                    </small>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                06/06/2018
+                                            </td>
+                                            <td>06/06/2018</td>
+                                           
+                                            <td><span class="label label-defaul pull-right">Em processamento (Maria)</span></td>
+                                            <td class="col-lg-2">
+                                                <a style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+                                             
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i class="fa fa-file-o"></i>
+                                            </td>
+                                            <td class="issue-info">
+
+                                                <a href="http://localhost:58893/Processar" style="" title="Editar Documento" onclick="">
+                                                    NFS 887
+                                                    <small style="font-weight:lighter;font-size:8px">
+                                                        Nota Fiscal de Saída
+                                                    </small>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                06/06/2018
+                                            </td>
+                                            <td>06/06/2018</td>
+
+                                            <td><span class="label label-warning pull-right">Pendente</span></td>
+                                            <td class="col-lg-2">
+                                                <a style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+                                               
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i class="fa fa-file-o" style="color: #233646"></i>
+                                            </td>
+                                            <td class="issue-info">
+
+                                                <a href="http://localhost:58893/Processar" style="color: #233646" title="Editar Documento" onclick="">
+                                                    Holerite João
+                                                    <small style="font-weight:lighter;font-size:8px">
+                                                        Holerites
+                                                    </small>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                06/06/2018
+                                            </td>
+                                            <td>06/06/2018</td>
+                                            <td><span class="label label-primary pull-right"> Processado (José)</span></td>
+                                           
+                                            <td class="col-lg-2">
+                                                <a style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+                                              
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i style="color: #233646" class="fa fa-file-o"></i>
+                                            </td>
+                                            <td class="issue-info">
+
+                                                <a href="http://localhost:58893/Processar" style="color: #233646" title="Editar Documento" onclick="">
+                                                    Contrato de prestação de serviços
+                                                    <small style="font-weight:lighter;font-size:8px">
+                                                        Contratos
+                                                    </small>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                06/06/2018
+                                            </td>
+                                            <td>06/06/2018</td>
+                                            <td><span class="label label-primary pull-right"> Processado (José)</span></td>
+                                            <td class="col-lg-2">
+                                                <a style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <br><br>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title"><i class="fa fa-paper-plane"></i> Enviar Documento</h4>
+
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="col-lg-6">
+                        <label>Descrição</label>
+                        <input class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Tipo de arquivo</label>
+                        <select id="pesq_itens" data-placeholder="Pesquisar Itens" class="chosen-select form-control" tabindex="2">
+                            <option value="0"> Nota Fiscal de Entrada </option>
+                            <option value="0"> Nota Fiscal de Saída  </option>
+                            <option value="0"> Holerite</option>
+                            <option value="0"> Contratos</option>
+                            <option value="0"> Modelos</option>
+                            <option value="0"> Arquivos XML</option>
+                            <option value="0"> Remessas ERP</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Usuário</label>
+                        <select id="pesq_itens" data-placeholder="Pesquisar Itens" class="chosen-select form-control" tabindex="2">
+                            <option value="0"> José </option>
+                            <option value="0"> Maria </option>
+                            <option value="0"> João</option>
+                            
+                        </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Data do Documento</label>
+                        <input class="form-control" type="date" value="2018-06-06" />
+                    </div>
+                    <br />
+                    <div class="col-lg-12" style="margin-top:10px">
+                        <form action="#" class="dropzone" id="dropzoneForm">
+                            <div class="fallback">
+                                <input name="file" type="file" multiple />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Sair</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-paper-plane"></i> Enviar </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal inmodal fade" id="modal-comentarios" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title"><i class="fa fa-commenting"></i> Comentários </h4>
+
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="col-lg-12">
+                    <textarea class="form-control" placeholder="Digite seu comentário aqui"></textarea>
+                    </div>
+                    <br/>
+                    <hr/>
+                    <br/>
+                    <div class="activity-stream">
+                        <div class="stream">
+                            <div class="stream-badge">
+                                <i class="fa fa-commenting-o"></i>
+                            </div>
+                            <div class="stream-panel">
+                                <div class="stream-info">
+                                    <a href="#">
+
+                                        <span>Usuário Cliente X</span>
+                                        <span class="date">Ontem as 10:00 am</span>
+                                    </a>
+                                </div>
+                                Este documento esta incorreto
+                            </div>
+                        </div>
+                        <div class="stream">
+                            <div class="stream-badge">
+                                <i class="fa fa-commenting-o"></i>
+                            </div>
+                            <div class="stream-panel">
+                                <div class="stream-info">
+                                    <a href="#">
+
+                                        <span>Usuário Controle</span>
+                                        <span class="date">Ontem as 10:10 am</span>
+                                    </a>
+                                </div>
+                                Ok Vou verificar
+                            </div>
+                        </div>
+                        <div class="stream">
+                            <div class="stream-badge">
+                                <i class="fa fa-commenting-o"></i>
+                            </div>
+                            <div class="stream-panel">
+                                <div class="stream-info">
+                                    <a href="#">
+
+                                        <span>Usuário Cliente X</span>
+                                        <span class="date">Ontem as 10:30 am</span>
+                                    </a>
+                                </div>
+                                Obrigado!
+                            </div>
+                        </div>
+                        <div class="stream">
+                            <div class="stream-badge">
+                                <i class="fa fa-commenting-o"></i>
+                            </div>
+                            <div class="stream-panel">
+                                <div class="stream-info">
+                                    <a href="#">
+
+                                        <span>Usuário Controle</span>
+                                        <span class="date">Ontem as 10:35 am</span>
+                                    </a>
+                                </div>
+                                Disponha!
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Sair</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-paper-plane"></i> Enviar </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Styles {
+    @Styles.Render("~/plugins/footableStyles")
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/plugins/switcheryStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Styles.Render("~/Content/plugins/dropzone/dropZoneStyles")
+    @Styles.Render("~/plugins/jasnyBootstrapStyles")
+    @Styles.Render("~/plugins/codeEditorStyles")
+
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/switchery")
+    @Scripts.Render("~/plugins/validate")
+    @Scripts.Render("~/plugins/select2")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/chosen")
+    @Scripts.Render("~/plugins/sweetAlert")
+    @Scripts.Render("~/bundles/jquery-validation")
+    @Scripts.Render("~/bundles/pt-br")
+    @Scripts.Render("~/plugins/footable")
+    @Scripts.Render("~/plugins/bootstrap-waitingfor")
+    @Scripts.Render("~/plugins/dropZone")
+    @Scripts.Render("~/plugins/jasnyBootstrap")
+    @Scripts.Render("~/plugins/codeEditor")
+
+    <script type="text/javascript">
+
+        Dropzone.options.dropzoneForm = {
+            paramName: "file", // The name that will be used to transfer the file
+            maxFilesize: 10, // MB
+            dictDefaultMessage: "<strong>Arraste arquivos aqui para anexa-los ao documento ou clique para seleciona-los manualmente em seu pc </strong></br> "
+        };
+
+        $(document).ready(function () {
+
+
+            //$("#modal_cadastro").modal();
+            $('.chosen-select').chosen({ width: "100%" });
+            $("#wizard").steps();
+            var switchery = new Switchery(elem, { color: '#418005' });
+
+
+        });
+    </script>
+}

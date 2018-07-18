@@ -1,0 +1,111 @@
+﻿@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Processar Documentos";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SGD | Processar</title>
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/plugins/switchery/switchery.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+    <link href="~/Content/plugins/switchery/switchery.css" rel="stylesheet" />
+</head>
+
+<body class="gray-bg" @*style="background-image: url(../Images/fundo.jpg)"*@>
+
+ 
+    <a href="http://localhost:58893/usuario" class="" style=" margin-top: -38px;">
+        <i class="fa fa-backward"></i> Voltar ao SGD
+    </a>
+<div class="col-lg-2">
+    <a href="http://localhost:58893/processar" class="btn btn-primary pull-left" style=" margin-top: 50px; ">
+        <i class="fa fa-backward"></i> Anterior
+    </a>
+</div>
+<div class="col-lg-8">
+
+    <table class="table table-hover table-striped issue-tracker">
+
+        <thead>
+            <tr>
+                <th></th>
+                <th><i class="fa fa-file"></i> PROCESSAR DOCUMENTOS</th>
+                <th>Tipo </th>
+                <th>Adicionado em</th>
+                <th>Data do Documento</th>
+                <th>Status</th>
+                <th class="col-lg-1"><i class="fa fa-ellipsis-h"></i> </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <i class="fa fa-file-o"></i>
+                </td>
+                <td class="issue-info">
+
+                    <a href="http://docs.google.com/viewer?url=http://ceapg.fgv.br/sites/ceapg.fgv.br/files/teste.pdf" title="Editar Documento" onclick="">
+                        NFE 234
+                        <small style="font-weight:lighter;font-size:8px">
+                            Nota Fiscal
+                        </small>
+                    </a>
+                </td>
+                <td>
+                 NF Entrada
+                </td>
+                <td>
+                    06/06/2018
+                </td>
+                <td>06/06/2018</td>
+                <td><input type="checkbox" class="js-switch"  /></td>
+                <td class="col-lg-2">
+                    <a style="font-size:10px ;" class=" btn btn-xs btn-primary" href="#modal-comentarios" data-toggle="modal" data-target="#modal-comentarios"> <i class="fa fa-comment"></i> 3 </a>
+                    
+                </td>
+            </tr>
+
+         
+        </tbody>
+    </table>
+
+
+</div>
+<div class="col-lg-2">
+    <a href="http://localhost:58893/processar" class="btn btn-primary pull-right" style=" margin-top: 50px; ">
+         Próximo <i class="fa fa-forward"></i>
+    </a>
+
+    </div>
+
+    <div class="col-lg-12 " style="">
+        <iframe src="http://docs.google.com/viewer?url=http://ceapg.fgv.br/sites/ceapg.fgv.br/files/teste.pdf&embedded=true" frameborder=0 width="100%" height="900px"></iframe>
+
+
+
+    </div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+
+    var elem = document.querySelector('.js-switch');
+    var switchery = new Switchery(elem, { color: '##233646' });
+
+    </script>
